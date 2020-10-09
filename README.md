@@ -16,12 +16,12 @@ Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
 * You have installed the latest version of `<coding_language/dependency/requirement_1>`
 * You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* Problem Solving Skill and 
+* Problem Solving Skill 
 
 ## Installing <project_name>
 
-To install <project_name>, follow these steps:
-git clone https://github.com/parvd/FAANG_coding_list
+To install this project, follow these steps:
+* git clone https://github.com/parvd/FAANG_coding_list
 
 ## Contributing to <project_name>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
