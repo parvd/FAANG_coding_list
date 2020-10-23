@@ -1,0 +1,5 @@
+Bactracking is the algorithm in which when one option which was taken turns out to be insufficient in solving the issue, we try to move back to the previous step 
+and look for another option that could be made so that we could reach our final desired answer.
+
+
+Some of the best examples of backtracking includes finding the path in a maze.
