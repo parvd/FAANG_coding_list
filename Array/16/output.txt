@@ -1,0 +1,2 @@
+Triplet is 1, 2, 5
+Triplet is -9, 0, 9

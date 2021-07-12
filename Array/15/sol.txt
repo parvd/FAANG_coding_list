@@ -1,0 +1,31 @@
+Solution:
+Create an array with size n. Where n is the size of input array (prices). Lets name it profit.
+
+This array will hold all intermediate results of possible transactions (buy -> sell) that could be made.
+Create a variable max and assing it's value as last element of the input array.
+
+This variable will hold the maximum price at which we can sell in a one transaction.
+Iterate over the input array once starting from the end and do the following:
+
+Step 1: if element at current index is greater than max -> change max to it
+
+Step 2: at the current index of the profit array assign maximum of (previous result, maximum - element at current index of the input array) = max(profit[i + 1], max - prices[i])
+
+What does this step mean? It means that at the current index of profit array will be stored the maximum possible profit in range from current index to the end of the array -> i.e from i to n-1. In an hours analogy this could be represented as what is maximum possible profit trader could have made in a time range from ith hour to the end of the day. Since it is two transactions available and time, as mentioned, is linear we can conditionally split the input array into two halves: first half — first transaction, second half — second transaction. So starting backwards from the last stock (hour) we are calculating the profit from the one of the two transcations.
+
+At the end of this step we will have at index zero of the profit array the maximum possible profit from one transcation. I.e at profit[0].
+
+Create variable min and initialize it as element at index zero of the input array -> min = prices[0]
+
+This variable will hold the minimum price at which we can buy in this transaction.
+Traverse the input array once again from the start and do the following:
+
+Step 1: if element at current index is smaller than min -> change min to it
+
+Step 2: at the current index of the profit array assign maximum of (previous result, (max profit that has been calculated for this index at step 3 + element at current index of the input array - min)) = max(profit[i - 1], profit[i] + prices[i] - min)
+
+To clearly understand what is happening at this step you could use this question: what is going to be the traders max profit if he would had bought at a price on the current index of the input array and sold at max the stocks during the first transcation and is going to buy at min and sell at a price of current index of the input array?
+
+At the end of this step profit[n-1] will hold the result
+
+return profit[n-1]

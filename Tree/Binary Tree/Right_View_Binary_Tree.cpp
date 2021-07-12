@@ -31,7 +31,7 @@ void leftView(Node *root){
 			curr = q.front();
 			q.pop_front();
 			
-			if(i==1){
+			if(i == s){
 				cout<<curr->data<<" ";
 			}
 			if(curr->left){
