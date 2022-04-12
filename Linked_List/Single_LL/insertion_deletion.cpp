@@ -8,10 +8,9 @@ struct node{
 		int data;
 		struct node *next;
 	};
-	
-	
+		
 void push(int x,node **head){
-	node *temp= new node();
+	node *temp 	= new node();
 	temp->data=x;
 	temp->next = *head;
 	*head=temp;
@@ -49,7 +48,7 @@ int main()
 	for(int i=0;i<n;i++){
 		int x;
 		//cin>>x;
-		push_front(i,&root);
+		push(i,&root);
 	}	
 	print(root);
 	cout<<endl;	

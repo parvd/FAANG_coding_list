@@ -1,0 +1,20 @@
+6 5
+--
+
+ Adjacency list of vertex 0
+ head -> 1-> 2
+
+ Adjacency list of vertex 1
+ head -> 0-> 2
+
+ Adjacency list of vertex 2
+ head -> 1-> 0-> 3
+
+ Adjacency list of vertex 3
+ head -> 2
+
+ Adjacency list of vertex 4
+ head -> 5
+
+ Adjacency list of vertex 5
+ head -> 4
