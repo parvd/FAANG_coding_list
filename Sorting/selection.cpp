@@ -1,48 +1,79 @@
-// C++ program for implementation of selection sort
+// In c++
+// by goku_11
+/*
+
+*/
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void swap(int *xp, int *yp)
+#define FOR(i, a, b) for (int i = a; i < b; i++)
+#define FORD(i, a, b) for (int i = a; i >= b; --i)
+#define REP(i, n) FOR(i, 0, (int)n - 1)
+#define pb push_back
+#define mp make_pair
+#define MS0(x) memset(x, 0, sizeof(x))
+#define MS1(x) memset(x, 1, sizeof(x))
+#define SORT(a, n) sort(begin(a), begin(a) + n)
+#define REV(a, n) reverse(begin(a), begin(a) + n)
+#define ll long long int
+#define llu unsigned long long int
+#define pii pair<int, int>
+#define MOD 1000000007
+#define fi first
+#define sec second
+#define N NULL
+bool sortbysec(const pair<int, int> &a, const pair<int, int> &b)
 {
-	int temp = *xp;
-	*xp = *yp;
-	*yp = temp;
+	return (a.second < b.second);
 }
 
-void selectionSort(int arr[], int n)
+void solve(int a[], int n)
 {
-	int i, j, min_idx;
-
-	// One by one move boundary of unsorted subarray
-	for (i = 0; i < n-1; i++)
+	int i = 0, j = 1;
+	while (i < n - 1)
 	{
-		// Find the minimum element in unsorted array
-		min_idx = i;
-		for (j = i+1; j < n; j++)
-		if (arr[j] < arr[min_idx])
-			min_idx = j;
-
-		// Swap the found minimum element with the first element
-		swap(&arr[min_idx], &arr[i]);
+		int temp = i;
+		while (j < n)
+		{
+			if (a[temp] < a[j])
+			{
+				j++;
+			}
+			else
+			{
+				temp = j;
+				j++;
+			}
+		}		
+		swap(a[temp], a[i]);
+		j = i + 1;
+		i++;
+	}
+	FOR(i, 0, n)
+	{
+		cout<<a[i]<<" < ";
 	}
 }
 
-/* Function to print an array */
-void printArray(int arr[], int size)
-{
-	int i;
-	for (i=0; i < size; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-}
-
-// Driver program to test above functions
 int main()
 {
-	int arr[] = {64, 25, 12, 22, 11};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	selectionSort(arr, n);
-	cout << "Sorted array: \n";
-	printArray(arr, n);
-	return 0;
+#ifndef ONLINE_JUDGE
+	freopen("i.txt", "r", stdin);
+	freopen("o.txt", "w", stdout);
+#endif
+	ll t;
+	cin >> t;
+	while (t--)
+	{
+		int n;
+		cin >> n;
+		int a[n];
+		vector<int> vec;
+		FOR(i, 0, n)
+		{
+			cin >> a[i];
+		}
+		solve(a, n);
+	}
 }

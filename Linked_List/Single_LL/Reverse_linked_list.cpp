@@ -37,6 +37,7 @@ void rev(node **root){
 }
 int main()
 {
+	
 	node *root=null;
 	int n;
 	cin>>n;

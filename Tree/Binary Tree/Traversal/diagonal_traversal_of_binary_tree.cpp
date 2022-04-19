@@ -37,6 +37,46 @@ void solve(Node *root){
     }
 
 }
+vector <vector <int>> result;
+
+void iterative(Node* root){
+    if(root == NULL)
+        return;
+ 
+    queue <Node*> q;
+    q.push(root);
+ 
+    while(!q.empty())
+    {
+        int size = q.size();
+        vector <int> answer;
+ 
+        while(size--)
+        {
+            Node* temp = q.front();
+            q.pop();
+ 
+            // traversing each component;
+            while(temp)
+            {
+                answer.push_back(temp->data);
+ 
+                if(temp->left)
+                    q.push(temp->left);
+ 
+                temp = temp->right;
+            }
+        }
+        result.push_back(answer);
+    }
+    for(int i=0 ; i<result.size() ; i++)
+    {
+        for(int j=0 ; j<result[i].size() ; j++)
+            cout<<result[i][j]<<"  ";
+        cout<<endl;
+    }
+}
+
 
 int main(){
 
@@ -52,6 +92,7 @@ int main(){
     root->right->left->right = new Node(8);
 
     solve(root);
+    iterative(root);
 }
 
 

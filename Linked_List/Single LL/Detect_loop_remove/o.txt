@@ -1,0 +1,8 @@
+loop
+5 4 3 2 
+loop
+8 7 6 5 
+loop
+4 3 2 1 
+loop
+3 2 1 0 

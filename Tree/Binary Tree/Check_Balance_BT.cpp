@@ -30,7 +30,7 @@ bool balance(Node *root,int *h)
 
     }
 
-    int l =0,r=0,lh=0,rh=0;
+    int l=0,r=0,lh=0,rh=0; 
 
     l = balance(root->left,&lh);
     r= balance(root->right,&rh);

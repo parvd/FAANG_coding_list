@@ -1,0 +1,9 @@
+4
+6
+agbdba
+5
+babad
+5
+bbbab
+8
+aaaabbaa

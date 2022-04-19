@@ -1,54 +1,74 @@
-//In c++
-//by goku_11
-#include<bits/stdc++.h>
+// In c++
+// by goku_11
+/*
+
+*/
+#include <bits/stdc++.h>
 
 using namespace std;
 
-#define sp system("pause")
-#define FOR(i,a,b) for(int i=a;i<=b;++i)
-#define FORD(i,a,b) for(int i=a;i>=b;--i)
-#define REP(i,n) FOR(i,0,(int)n-1)
-#define pb(x) push_back(x)
-#define mp(a,b) make_pair(a,b)
-#define MS0(x) memset(x,0,sizeof(x))
-#define MS1(x) memset(x,1,sizeof(x))
-#define SORT(a,n) sort(begin(a),begin(a)+n)
-#define REV(a,n) reverse(begin(a),begin(a)+n)
-#define ll long long int 
+#define FOR(i, a, b) for (int i = a; i < b; i++)
+#define FORD(i, a, b) for (int i = a; i >= b; --i)
+#define REP(i, n) FOR(i, 0, (int)n - 1)
+#define pb push_back
+#define mp make_pair
+#define MS0(x) memset(x, 0, sizeof(x))
+#define MS1(x) memset(x, 1, sizeof(x))
+#define SORT(a, n) sort(begin(a), begin(a) + n)
+#define REV(a, n) reverse(begin(a), begin(a) + n)
+#define ll long long int
 #define llu unsigned long long int
-#define pii pair<int,int>
+#define pii pair<int, int>
 #define MOD 1000000007
 #define fi first
 #define sec second
-
+#define N NULL
+bool sortbysec(const pair<int, int> &a, const pair<int, int> &b)
+{
+    return (a.second < b.second);
+}
+void solve(int a[], int n)
+{
+    int i, j;
+    for (int i = 1; i < n; i++)
+    {
+        int j = i;
+        int val = a[i];
+        while (j > 0 && a[j - 1] > val)
+        {
+            a[j] = a[j - 1];
+            j--;
+        }
+        a[j] = val;
+    }
+    FOR(i, 0, n)
+    {
+        cout << a[i] << " < ";
+    }
+}
 int main()
 {
-ll t;
-cin>>t;
-while(t--)
-{
-int n;
-cin>>n;
-int a[n];
-FOR(i,0,n-1)
-cin>>a[i];
-int mini,j;
-for(int i=1;i<n;i++){
-mini=a[i];
-j=i-1;
-while(mini < a[j] && j>=0){
-a[j+1]=a[j];
-j--;
+#ifndef ONLINE_JUDGE
+    freopen("i.txt", "r", stdin);
+    freopen("o.txt", "w", stdout);
+#endif
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        vector<int> vec;
+        FOR(i, 0, n)
+        {
+            cin >> a[i];
+        }
+        FOR(i, 0, n)
+        {
+            cout << a[i] << " ";
+        }
+        cout << endl;
+        solve(a, n);
+    }
 }
-a[j+1]=mini;
-}
-FOR(i,0,n-1)
-cout<<a[i]<<" ";
-cout<<endl;
-} 	
-}
-
-
-
-
-

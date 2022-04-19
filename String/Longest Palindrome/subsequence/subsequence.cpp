@@ -28,28 +28,40 @@ bool sortbysec(const pair<int, int> &a, const pair<int, int> &b)
     return (a.second < b.second);
 }
 
-int conquer(int a[],int st,int ed){
-    int pt=a[ed];
-    int idx=st;
-    for(int i=st;i<ed;i++){
-        if(a[i]<=pt){
-            swap(a[i],a[idx]);
-            idx++;
+void printSubStr(string str, int low, int high)
+{
+    for (int i = low; i <= high; ++i)
+        cout << str[i];
+}
+ 
+
+void solve(string s){
+    int n=s.length();
+    int dp[n+1][n+1];
+    memset(dp,0,sizeof(dp));
+    for(int i=0;i<n;i++){
+        dp[i][i]=1;
+    }
+
+    for(int i=2;i<=n;i++){
+        for(int j=0;j<n-i+1;j++){
+            int k=i+j-1;
+            if(s[k]==s[j]){
+                dp[j][k]=2+dp[j+1][k-1];
+            }
+            else{
+                dp[j][k] = max(dp[j+1][k],dp[j][k-1]);
+            }
         }
+    }    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<dp[i][j]<<" ";
+        }
+        cout<<endl;
     }
-    swap(a[idx],a[ed]);
-    return idx;
-
+    cout<<dp[0][n-1];
 }
-void divide(int a[],int st,int ed){
-    if(st>=ed){
-        return;
-    }
-    int pt=conquer(a,st,ed);
-    divide(a,st,pt-1);
-    divide(a,pt+1,ed);
-}
-
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -62,16 +74,9 @@ int main()
     {
         int n;
         cin >> n;
-        int a[n];
-        vector<int> vec;
-        FOR(i, 0, n)
-        {
-            cin >> a[i];            
-        }
-        divide(a,0,n-1);
-        FOR(i, 0, n)
-        {
-            cout<< a[i]<<" ";            
-        }
+        string s;
+        cin>>s;
+        solve(s);
+        cout<<"\n---\n";
     }
 }
