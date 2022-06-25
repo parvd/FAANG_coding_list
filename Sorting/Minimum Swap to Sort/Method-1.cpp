@@ -47,7 +47,7 @@ int findMinSwap(int arr[] , int n)
 			// swap with its respective index 
 			swap(vec[i].first,vec[vec[i].second].first); 
 			swap(vec[i].second,vec[vec[i].second].second); 
-			printin(vec,n);
+			// printin(vec,n);
 		} 
 		
 		// swap until the correct 
