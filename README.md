@@ -22,6 +22,12 @@ To install this project, follow these steps:
 
 ## Contributing to <project_name>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
+
+Rules for adding solution to this repo:
+1. Write the question problem statement at begining of the code.
+2. Include Sample testcases with valid input and output
+3. Use proper tag. E.g Use Tree directory for tree related question. If not present then add to new one.
+
 To contribute to <project_name>, follow these steps:
 
 1. Fork this repository.
